@@ -1,0 +1,6 @@
+<h1> List of movies </h1>
+<% @lists.each do |list| %>
+<p><%= link_to "#{list.name}", list_path(list) %></p>
+<% end %>
+
+<button class='btn btn-warning'><%= link_to "create new", new_list_path %> </button>

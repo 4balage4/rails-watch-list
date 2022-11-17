@@ -1,0 +1,8 @@
+
+<p> List name: <%= @list.name %></p>
+
+<button class='btn btn-warning'><%= link_to "back", lists_path %></button>
+<button class='btn btn-warning'><%= link_to "add bookmark ",  new_list_bookmark_path(@list) %></button>
+
+
+<button class='btn btn-warning'><%= link_to "all bookmarks ",  list_bookmarks_path(@list) %></button>
