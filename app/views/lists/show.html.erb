@@ -1,8 +1,29 @@
 
-<p> List name: <%= @list.name %></p>
 
-<button class='btn btn-warning'><%= link_to "back", lists_path %></button>
-<button class='btn btn-warning'><%= link_to "add bookmark ",  new_list_bookmark_path(@list) %></button>
+<div class="list">
+    <h1><%= @list.name %></h1>
+</div>
+     <div class="card-product-container">
+            <% @list.bookmarks.each do |bookmark|%>
+          <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <h2><strong><%= bookmark.movie.title %></strong> </h2>
+                <p><%= bookmark.comment %> </p>
+              </div>
+            </div>
+                <% end %>
+          <div class="buttons-container">
+              <button class='btn btn-flat'><%= link_to "back", lists_path %></button>
+              <button class='btn btn-flat'><%= link_to "add bookmark ",  new_list_bookmark_path(@list) %></button>
+              <button class='btn btn-flat'><%= link_to "all bookmarks ",  list_bookmarks_path(@list) %></button>
+            </div>
+        </div>
 
-
-<button class='btn btn-warning'><%= link_to "all bookmarks ",  list_bookmarks_path(@list) %></button>
+<%# <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div> %>
