@@ -1,29 +1,27 @@
+<div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, width: 800, height: 600, crop: :fill %>')">
+<div class="container">
 
-
-<div class="list">
-    <h1><%= @list.name %></h1>
-</div>
-     <div class="card-product-container">
-            <% @list.bookmarks.each do |bookmark|%>
-          <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-product-infos">
-                <h2><strong><%= bookmark.movie.title %></strong> </h2>
-                <p><%= bookmark.comment %> </p>
-              </div>
-            </div>
-                <% end %>
-          <div class="buttons-container">
-              <button class='btn btn-flat'><%= link_to "back", lists_path %></button>
-              <button class='btn btn-flat'><%= link_to "add bookmark ",  new_list_bookmark_path(@list) %></button>
-              <button class='btn btn-flat'><%= link_to "all bookmarks ",  list_bookmarks_path(@list) %></button>
-            </div>
-        </div>
-
-<%# <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+  <div class="list">
+    <div class="text-center">
+    <h2> <%= @list.name.capitalize %> list's bookmarks </h2>
   </div>
-</div> %>
+  </div>
+    <div class="card-product-container">
+      <% @list.bookmarks.each do |bookmark|%>
+        <div class="card-product">
+          <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title, class: "card-product-img" %>
+            <div class="card-product-infos">
+              <h2><strong><%= bookmark.movie.title %></strong> <span class="text-muted font-weight-normal">• <%= bookmark.movie.rating %> <i class="fas fa-star star-yellow"></i></span></strong> </h2>
+              <p><%= bookmark.comment %> </p>
+            </div>
+          </div>
+          <% end %>
+        <div class="buttons-container mb-5">
+        <button class='btn btn-flat'><%= link_to "back", lists_path %></button>
+        <button class='btn btn-flat'><%= link_to "add bookmark ",  new_list_bookmark_path(@list) %></button>
+        <button class='btn btn-flat'><%= link_to "all bookmarks ",  list_bookmarks_path(@list) %></button>
+        </div>
+      </div>
+</div>
+</div>
+</div>

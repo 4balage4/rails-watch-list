@@ -2,18 +2,25 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-#
+# #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# 10.times do |movie|
-#   randomnumber = [1, 2, 3, 4, 5].sample
-#   movie = Movie.create(title: Faker::Movie.title, overview: Faker::Movie.quote, poster_url: Faker::Internet.url, rating: randomnumber )
-#   puts movie.title
+puts "Cleaning database..."
+Bookmark.destroy_all
+List.destroy_all
+Movie.destroy_all
 
-#   end
-    
 
-    List.create(name: "romantic")
-    List.create(name: "horror")
-    List.create(name: "badmovie")
-    List.create(name: "classic")
+10.times do |movie|
+  randomnumber = [1, 2, 3, 4, 5].sample
+  movie = Movie.create(title: Faker::Movie.title, overview: Faker::Movie.quote, poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: randomnumber )
+  puts movie.title
+
+  end
+
+# require "open-uri"
+
+# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+# article = Article.new(title: "NES", body: "A great console")
+# article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# article.save

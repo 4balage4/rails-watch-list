@@ -1,5 +1,6 @@
-a:link {
+a {
   text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
 .btn-ghost {
@@ -20,12 +21,12 @@ a:link {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: red;
+  background: $yellow;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: red;
+  background: $yellow;
   color: white;
 }
 
@@ -42,4 +43,8 @@ a:link {
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+}
+
+.buttons-container {
+  text-align: center;
 }

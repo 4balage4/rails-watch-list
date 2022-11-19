@@ -1,8 +1,16 @@
-<%= form_with model: @list do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-    <%= f.submit %>
-<% end %>
 
-
-<button class='btn btn-warning'><%= link_to "back", lists_path %></button>
+<div class="container">
+  <div class="text-center mt-5">
+    <h2>Create your new list</h2>
+  </div>
+    <div class="border rounded p-4 my-4">
+      <%= simple_form_for @list do |f| %>
+      <%= f.input :name, placeholder: "Enter a list name" %>
+      <%= f.input :photo, as: :file %>
+        <div class="buttons-container">
+          <%= f.submit class:'btn btn-flat' %>
+          <button class='btn btn-flat'><%= link_to "back to all lists", lists_path %></button>
+          <% end %>
+        </div>
+    </div>
+</div>
