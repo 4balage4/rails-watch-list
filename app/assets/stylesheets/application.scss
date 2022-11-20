@@ -11,6 +11,11 @@
 @import "components/index";
 @import "pages/index";
 
-.page {
+.content {
+  min-height: calc(100vh);
   background-color: rgb(227, 233, 233);
+}
+
+.content-list {
+  min-height: calc(100vh);
 }

@@ -15,12 +15,11 @@ Movie.destroy_all
   randomnumber = [1, 2, 3, 4, 5].sample
   movie = Movie.create(title: Faker::Movie.title, overview: Faker::Movie.quote, poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: randomnumber )
   puts movie.title
-
-  end
+end
 
 # require "open-uri"
 
-# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
-# article = Article.new(title: "NES", body: "A great console")
-# article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-# article.save
+# file = URI.open("http://tmdb.lewagon.com/movie/top_rated?api_key=<your_api_key>")
+# movie = Movie.new(title: "NES", body: "A great console")
+# movie.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# movie.save
